@@ -7,13 +7,11 @@ interface IGeographicalAreaProps {
 }
 
 const GeographicalArea: FC<IGeographicalAreaProps> = ({ geographicalData }) => {
-  console.log('geographicalData => ', geographicalData);
-
   if (geographicalData) {
     return (
       <View style={styles.container}>
         <View style={styles.title}>
-          <Text>Number of sports </Text>
+          <Text>Number of associations in Paris </Text>
           <Text>VS other regions </Text>
         </View>
         <Pie
@@ -42,8 +40,8 @@ const GeographicalArea: FC<IGeographicalAreaProps> = ({ geographicalData }) => {
     );
   } else {
     return (
-      <View>
-        <Text>Loading</Text>
+      <View style={styles.container}>
+        <Text>Loading...</Text>
       </View>
     );
   }

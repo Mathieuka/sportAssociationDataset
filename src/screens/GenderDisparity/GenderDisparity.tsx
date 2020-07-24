@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC } from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 import Pie from 'react-native-pie';
 
@@ -7,7 +7,6 @@ interface IGenderDisparityProps {
 }
 
 const GenderDisparity: FC<IGenderDisparityProps> = ({ genderData }) => {
-  useEffect(() => {}, [genderData]);
   if (genderData) {
     return (
       <View style={styles.container}>

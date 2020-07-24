@@ -10,6 +10,7 @@ interface IHomeProps {
 const Home: FC<IHomeProps> = ({ navigation, getData }) => {
   useEffect(() => {
     getData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleNavigation = (screenName: ScreenName) => {

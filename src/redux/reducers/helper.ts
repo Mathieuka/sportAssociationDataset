@@ -106,7 +106,7 @@ export const sectorOfActivityProcessing = (
   });
 
   return {
-    percentageEcologyAssociation: parseInt(n1.toFixed(0), 10),
+    percentageEcologicAssociation: parseInt(n1.toFixed(0), 10),
     percentageOtherAssociation: parseInt(n2.toFixed(0), 10),
   };
 };
