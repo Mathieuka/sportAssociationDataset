@@ -76,8 +76,8 @@ export const genderDisparityProcessing = (
   });
 
   return {
-    percentageOfWomen: n1.toFixed(0),
-    percentageOfMen: n2.toFixed(0),
+    percentageOfWomen: parseInt(n1.toFixed(0), 10),
+    percentageOfMen: parseInt(n2.toFixed(0), 10),
   };
 };
 
@@ -91,8 +91,8 @@ export const geographicalDisparityProcessing = (
   });
 
   return {
-    percentageParis: n1.toFixed(0),
-    percentageOtherCity: n2.toFixed(0),
+    percentageParis: parseInt(n1.toFixed(0), 10),
+    percentageOtherCity: parseInt(n2.toFixed(0), 10),
   };
 };
 
@@ -106,7 +106,7 @@ export const sectorOfActivityProcessing = (
   });
 
   return {
-    percentageEcologyAssociation: n1.toFixed(0),
-    percentageOtherAssociation: n2.toFixed(0),
+    percentageEcologyAssociation: parseInt(n1.toFixed(0), 10),
+    percentageOtherAssociation: parseInt(n2.toFixed(0), 10),
   };
 };

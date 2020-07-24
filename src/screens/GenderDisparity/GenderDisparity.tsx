@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 import Pie from 'react-native-pie';
 
@@ -7,45 +7,51 @@ interface IGenderDisparityProps {
 }
 
 const GenderDisparity: FC<IGenderDisparityProps> = ({ genderData }) => {
-  // const [womenPercentage, setWomenPercentage] = useState(0);
-  // const [menPercentage, setMenPercentage] = useState(0);
-  // const [total, setTotal] = useState(0);
-
-  console.log(genderData);
-
-  return (
-    <View style={styles.container}>
-      <Pie
-        radius={80}
-        sections={[
-          {
-            percentage: 10,
-            color: '#C70039',
-          },
-          {
-            percentage: 20,
-            color: '#44CD40',
-          },
-        ]}
-        strokeCap={'butt'}
-      />
-    </View>
-  );
+  useEffect(() => {}, [genderData]);
+  if (genderData) {
+    return (
+      <View style={styles.container}>
+        <View style={styles.title}>
+          <Text>disparity between men and women </Text>
+          <Text>in sports associations in paris </Text>
+        </View>
+        <Pie
+          radius={80}
+          sections={[
+            {
+              percentage: genderData.percentageOfWomen,
+              color: '#C70039',
+            },
+            {
+              percentage: genderData.percentageOfMen,
+              color: '#44CD40',
+            },
+          ]}
+          strokeCap={'butt'}
+        />
+        <Text style={styles.women}>Women {genderData.percentageOfWomen} %</Text>
+        <Text style={styles.men}>Men {genderData.percentageOfMen} %</Text>
+      </View>
+    );
+  } else {
+    return (
+      <View style={styles.container}>
+        <Text>Loading...</Text>
+      </View>
+    );
+  }
 };
 
 const styles = StyleSheet.create({
-  container: { alignItems: 'center', justifyContent: 'center', height: 1050 },
-  gauge: {
-    position: 'absolute',
-    width: 100,
-    height: 160,
-    alignItems: 'center',
-    justifyContent: 'center',
+  container: { alignItems: 'center', justifyContent: 'center', flex: 1 },
+  women: {
+    color: '#C70039',
   },
-  gaugeText: {
-    backgroundColor: 'transparent',
-    color: '#000',
-    fontSize: 24,
+  men: {
+    color: '#44CD40',
+  },
+  title: {
+    margin: 20,
   },
 });
 

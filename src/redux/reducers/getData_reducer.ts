@@ -23,18 +23,18 @@ export const getDataReducer = (
       const groupSelected = parseGroups(
         action.payload.response.data.facet_groups,
       );
-      const genderResult = parseGenderGroup(groupSelected.pv_public_vis);
-      const GeographicalGroupResult = parseGeographicalGroup(
+      const genderPercentage = parseGenderGroup(groupSelected.pv_public_vis);
+      const GeographicalGroupPercentage = parseGeographicalGroup(
         groupSelected.cp_adresse_code_postal,
       );
-      const sectorResult = parseSectorOfActivityGroup(
+      const sectorPercentage = parseSectorOfActivityGroup(
         groupSelected.sa_libell_secteur_d_activit,
       );
       // console.log('categorySelected => ', categorySelected);
       return {
-        genderResult,
-        GeographicalGroupResult,
-        sectorResult,
+        genderPercentage,
+        GeographicalGroupPercentage,
+        sectorPercentage,
       };
     default:
       return state;
