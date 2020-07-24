@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Text, View } from 'react-native';
 
-const GenderDisparity = () => {
+interface IGenderDisparityProps {
+  genderData: any;
+}
+
+const GenderDisparity: FC<IGenderDisparityProps> = ({ genderData }) => {
+  console.log('gender => ', genderData);
   return (
     <View>
       <Text> GenderDisparity View </Text>

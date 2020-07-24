@@ -1,12 +1,17 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect } from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 import Button from '../../sharedComponents/Button/Button';
 import { HomeNavigationProp, ScreenName } from '../../router/type';
 interface IHomeProps {
   navigation?: HomeNavigationProp;
+  getData: any;
 }
 
-const Home: FC<IHomeProps> = ({ navigation }) => {
+const Home: FC<IHomeProps> = ({ navigation, getData }) => {
+  useEffect(() => {
+    getData();
+  }, []);
+
   const handleNavigation = (screenName: ScreenName) => {
     if (navigation) {
       navigation.navigate(screenName);

@@ -3,7 +3,7 @@ import SectorOfActivity from './SectorOfActivity';
 
 const mapStateToProps = (state: any) => {
   return {
-    data: state.getDataReducer,
+    sectorOfActivityData: state.getDataReducer.sa_libell_secteur_d_activit,
   };
 };
 

@@ -3,7 +3,7 @@ import GeographicalArea from './GeographicalArea';
 
 const mapStateToProps = (state: any) => {
   return {
-    data: state.getDataReducer,
+    geographicalData: state.getDataReducer.cp_adresse_code_postal,
   };
 };
 

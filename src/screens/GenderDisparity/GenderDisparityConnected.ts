@@ -3,7 +3,7 @@ import GenderDisparity from './GenderDisparity';
 
 const mapStateToProps = (state: any) => {
   return {
-    data: state.getDataReducer,
+    genderData: state.getDataReducer.pv_public_vis,
   };
 };
 

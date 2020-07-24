@@ -14,8 +14,7 @@ export const getDataReducer = (
 ) => {
   switch (action.type) {
     case ActionType.GET_DATA:
-      console.log('getDataReducer triggered');
-      return state;
+      return action.payload.response;
     default:
       return state;
   }
