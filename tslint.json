@@ -1,0 +1,32 @@
+{
+    "defaultSeverity": "error",
+	"extends": ["tslint:latest", "tslint-config-prettier"],
+	"linterOptions": {
+		"exclude": [
+		]
+	},
+    "rules": {    
+		"max-line-length": {
+			"options": [120]
+		},
+        "semicolon": [true, "always"],
+        "quotemark": [true, "single", "tsx-single"],
+        "object-curly-spacing": [2, "always"],
+		"new-parents": true,
+		"no-arg": true,
+		"no-bitwise": true,
+		"no-conditional-assignment": true,
+		"no-consecutive-blank-lines": false,
+		"no-console": {
+			"severity": "warning",
+			"options": ["debug", "info", "log", "time", "timeEnd", "trace"]
+		},
+		"no-implicit-dependencies": [false]
+	},
+	"jsRules": {
+		"max-line-length": {
+			"options": [120]
+		}
+	},
+    "rulesDirectory": []
+}
