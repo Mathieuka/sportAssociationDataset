@@ -10,7 +10,6 @@
 			"options": [120]
 		},
         "semicolon": [true, "always"],
-        "quotemark": [true, "single", "tsx-single"],
         "object-curly-spacing": [2, "always"],
 		"new-parents": true,
 		"no-arg": true,

@@ -7,24 +7,11 @@
  */
 
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
 
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import Router from './src/router/Router';
 
 const App = () => {
-  return (
-    <View>
-      <Text>App View</Text>
-    </View>
-  );
+  return <Router />;
 };
-
-const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: Colors.lighter,
-  },
-});
 
 export default App;
