@@ -12,11 +12,11 @@ const GenderDisparity: FC<IGenderDisparityProps> = ({ genderData }) => {
     return (
       <View style={styles.container}>
         <View style={styles.title}>
-          <Text>disparity between men and women </Text>
+          <Text>Disparity between men and women </Text>
           <Text>in sports associations in paris </Text>
         </View>
         <Pie
-          radius={80}
+          radius={100}
           sections={[
             {
               percentage: genderData.percentageOfWomen,
