@@ -14,6 +14,7 @@ export const getDataReducer = (
 ) => {
   switch (action.type) {
     case ActionType.GET_DATA:
+      console.log('Store => ', action.payload.response);
       return action.payload.response;
     default:
       return state;
