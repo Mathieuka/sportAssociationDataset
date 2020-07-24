@@ -2,10 +2,10 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import Home from '../screens/Home/Home';
-import GeographicArea from '../screens/GeographicArea/GeographicalArea';
-import GenderDisparity from '../screens/GenderDisparity/GenderDisparity';
-import SectorOfActivity from '../screens/SectorOfActivity/SectorOfActivity';
+import Home from '../screens/Home/HomeConnected';
+import GeographicArea from '../screens/GeographicArea/GeographicalAreaConnected';
+import GenderDisparity from '../screens/GenderDisparity/GenderDisparityConnected';
+import SectorOfActivity from '../screens/SectorOfActivity/SectorOfActivityConnected';
 
 export type RootStackParamList = {
   Home: undefined;
