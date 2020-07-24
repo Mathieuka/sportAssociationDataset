@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC } from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 import Pie from 'react-native-pie';
 
@@ -11,7 +11,7 @@ const GenderDisparity: FC<IGenderDisparityProps> = ({ genderData }) => {
   // const [menPercentage, setMenPercentage] = useState(0);
   // const [total, setTotal] = useState(0);
 
-  console.log(genderData)
+  console.log(genderData);
 
   return (
     <View style={styles.container}>
