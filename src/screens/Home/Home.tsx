@@ -1,13 +1,36 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 import Button from '../../sharedComponents/Button/Button';
-const Home = () => {
+import { HomeNavigationProp, ScreenName } from '../../router/type';
+interface IHomeProps {
+  navigation?: HomeNavigationProp;
+}
+
+const Home: FC<IHomeProps> = ({ navigation }) => {
+  const handleNavigation = (screenName: ScreenName) => {
+    if (navigation) {
+      navigation.navigate(screenName);
+    }
+  };
+
   return (
     <View style={styles.homeContainer}>
-      <Text> Home Viesw </Text>
-      <Button stylesProps={styles.button} title="Gender disparity" />
-      <Button stylesProps={styles.button} title="Geographic Area disparity" />
-      <Button stylesProps={styles.button} title="Sector of activity" />
+      <Text> Home View </Text>
+      <Button
+        stylesProps={styles.button}
+        title="Gender disparity"
+        onPress={() => handleNavigation(ScreenName.GenderDisparity)}
+      />
+      <Button
+        stylesProps={styles.button}
+        title="Geographic Area disparity"
+        onPress={() => handleNavigation(ScreenName.GeographicArea)}
+      />
+      <Button
+        stylesProps={styles.button}
+        title="Sector of activity"
+        onPress={() => handleNavigation(ScreenName.SectorOfActivity)}
+      />
     </View>
   );
 };

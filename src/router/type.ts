@@ -2,6 +2,13 @@ import { RouteProp } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from './Router';
 
+export enum ScreenName {
+  Home = 'Home',
+  GenderDisparity = 'GenderDisparity',
+  SectorOfActivity = 'SectorOfActivity',
+  GeographicArea = 'GeographicArea',
+}
+
 export type HomeRouteProp = RouteProp<RootStackParamList, 'Home'>;
 export type HomeNavigationProp = StackNavigationProp<
   RootStackParamList,
