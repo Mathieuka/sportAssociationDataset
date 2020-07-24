@@ -4,7 +4,6 @@ import {
   parseGenderGroup,
   parseGeographicalGroup,
   parseSectorOfActivityGroup,
-  genderDisparityProcessing,
 } from './helper';
 
 interface IGetDataInitialState {
@@ -28,10 +27,15 @@ export const getDataReducer = (
       const GeographicalGroupResult = parseGeographicalGroup(
         groupSelected.cp_adresse_code_postal,
       );
-      console.log('GeographicalGroupResult => ', GeographicalGroupResult);
-      parseSectorOfActivityGroup(groupSelected.sa_libell_secteur_d_activit);
+      const sectorResult = parseSectorOfActivityGroup(
+        groupSelected.sa_libell_secteur_d_activit,
+      );
       // console.log('categorySelected => ', categorySelected);
-      return groupSelected;
+      return {
+        genderResult,
+        GeographicalGroupResult,
+        sectorResult,
+      };
     default:
       return state;
   }

@@ -55,7 +55,15 @@ export const parseGeographicalGroup = (groupsSelected: any) => {
 };
 
 export const parseSectorOfActivityGroup = (groupsSelected: any) => {
-  // console.log('PARSER SECTOR => ', groupsSelected);
+  const obj: { ecology: number; other: number } = { ecology: 0, other: 0 };
+  for (const sector of groupsSelected) {
+    if (sector.path === 'Environnement & cologie') {
+      obj.ecology = obj.ecology + 1;
+    } else {
+      obj.other = obj.other + 1;
+    }
+  }
+  return sectorOfActivityProcessing(obj.ecology, obj.other);
 };
 
 export const genderDisparityProcessing = (
@@ -83,22 +91,22 @@ export const geographicalDisparityProcessing = (
   });
 
   return {
-    percentageParis: n1,
-    percentageOtherCity: n2,
+    percentageParis: n1.toFixed(0),
+    percentageOtherCity: n2.toFixed(0),
   };
 };
 
 export const sectorOfActivityProcessing = (
-  ecologyAssociation: number,
+  ecologicAssociation: number,
   otherAssociation: number,
 ) => {
   const { n1, n2 } = percentage({
-    name1: ecologyAssociation,
+    name1: ecologicAssociation,
     name2: otherAssociation,
   });
 
   return {
-    percentageEcologyAssociation: n1,
-    percentageOtherAssociation: n2,
+    percentageEcologyAssociation: n1.toFixed(0),
+    percentageOtherAssociation: n2.toFixed(0),
   };
 };
