@@ -4,7 +4,7 @@ import Button from '../../sharedComponents/Button/Button';
 const Home = () => {
   return (
     <View style={styles.homeContainer}>
-      <Text> Home View </Text>
+      <Text> Home Viesw </Text>
       <Button stylesProps={styles.button} title="Gender disparity" />
       <Button stylesProps={styles.button} title="Geographic Area disparity" />
       <Button stylesProps={styles.button} title="Sector of activity" />

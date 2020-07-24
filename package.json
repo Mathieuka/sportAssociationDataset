@@ -26,6 +26,7 @@
     "react-native-screens": "^2.9.0",
     "react-redux": "^7.2.0",
     "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
     "redux-thunk": "^2.3.0",
     "tslint": "^6.1.2",
     "tslint-config-prettier": "^1.18.0",
