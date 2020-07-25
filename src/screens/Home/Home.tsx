@@ -7,6 +7,16 @@ interface IHomeProps {
   getData: any;
 }
 
+const img = {
+  uri: 'https://mfiles.alphacoders.com/452/452736.jpg',
+};
+
+enum ButtonTitle {
+  genderDisparity = 'Gender disparity',
+  geographicalDisparity = 'Geographic Area disparity',
+  sectorDisparity = 'Sector of activity',
+}
+
 const Home: FC<IHomeProps> = ({ navigation, getData }) => {
   useEffect(() => {
     getData();
@@ -19,10 +29,6 @@ const Home: FC<IHomeProps> = ({ navigation, getData }) => {
     }
   };
 
-  const img = {
-    uri: 'https://mfiles.alphacoders.com/452/452736.jpg',
-  };
-
   return (
     <ImageBackground source={img} style={styles.image}>
       <View style={styles.homeContainer}>
@@ -33,17 +39,17 @@ const Home: FC<IHomeProps> = ({ navigation, getData }) => {
         </View>
         <Button
           stylesProps={styles.button}
-          title="Gender disparity"
+          title={ButtonTitle.genderDisparity}
           onPress={() => handleNavigation(ScreenName.GenderDisparity)}
         />
         <Button
           stylesProps={styles.button}
-          title="Geographic Area disparity"
+          title={ButtonTitle.geographicalDisparity}
           onPress={() => handleNavigation(ScreenName.GeographicArea)}
         />
         <Button
           stylesProps={styles.button}
-          title="Sector of activity"
+          title={ButtonTitle.sectorDisparity}
           onPress={() => handleNavigation(ScreenName.SectorOfActivity)}
         />
       </View>

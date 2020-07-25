@@ -3,7 +3,7 @@ import GeographicalArea from './GeographicalArea';
 
 const mapStateToProps = (state: any) => {
   return {
-    geographicalData: state.getDataReducer.GeographicalGroupPercentage,
+    geographicalData: state.getDataReducer.geographicalGroupPercentage,
   };
 };
 

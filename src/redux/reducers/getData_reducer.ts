@@ -20,20 +20,27 @@ export const getDataReducer = (
 ) => {
   switch (action.type) {
     case ActionType.GET_DATA:
+      // Get groupe select for survey
       const groupSelected = parseGroups(
         action.payload.response.data.facet_groups,
       );
+
+      // Get gender percentage between man and woman
       const genderPercentage = parseGenderGroup(groupSelected.pv_public_vis);
-      const GeographicalGroupPercentage = parseGeographicalGroup(
+
+      // Get city percentage between Paris and other city
+      const geographicalGroupPercentage = parseGeographicalGroup(
         groupSelected.cp_adresse_code_postal,
       );
+
+      // Get sector percentage between ecologic association and other
       const sectorPercentage = parseSectorOfActivityGroup(
         groupSelected.sa_libell_secteur_d_activit,
       );
-      // console.log('categorySelected => ', categorySelected);
+
       return {
         genderPercentage,
-        GeographicalGroupPercentage,
+        geographicalGroupPercentage,
         sectorPercentage,
       };
     default:
