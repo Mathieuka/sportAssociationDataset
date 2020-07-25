@@ -42,7 +42,11 @@ const GenderDisparity: FC<IGenderDisparityProps> = ({ genderData }) => {
 };
 
 const styles = StyleSheet.create({
-  container: { alignItems: 'center', justifyContent: 'center', flex: 1 },
+  container: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    flex: 1,
+  },
   women: {
     color: '#C70039',
   },
